@@ -11,15 +11,12 @@ layer {
     mean_value: 123
   }
   image_data_param {
-    source: "data/list_train.txt"
-    root_folder: "data/train/"
-    batch_size: 32
-    shuffle: true
+    source: "data/list_val.txt"
+    root_folder: "data/val/"
+    batch_size: 64
+    shuffle: false
     new_width: 330
     new_height: 330
-  }
-  include: {
-    phase: TRAIN
   }
 }
 layer {
@@ -4726,4 +4723,14 @@ layer {
     ignore_label: -1
   }
   loss_weight: 1
+}
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "classifier_dog"
+  bottom: "label"
+  top: "accuracy"
+  include {
+    phase: TEST
+  }
 }

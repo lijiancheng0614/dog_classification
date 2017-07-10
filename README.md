@@ -49,9 +49,13 @@
 Run train script: `./train.sh $MODEL_NAME $GPU_ID`:
 
 ```bash
-train.sh inception_v3 0
+./train.sh inception_v3 0
 ```
 
 ### Test
 
-Run `test.sh`
+Run test script: `./test.sh $MODEL_NAME $ITER $GPU_ID`:
+
+```bash
+./test.sh inception_v3 2500 0
+```
