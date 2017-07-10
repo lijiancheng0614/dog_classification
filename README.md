@@ -9,8 +9,9 @@
 ```
 ├── data
 │   ├── train
-│   ├── test1
-│   ├── test2
+│   ├── val
+│   ├── test-01
+│   ├── test-02
 │   ├── data_train.txt
 │   ├── label_name.txt
 │   ├── list_train.txt
@@ -27,19 +28,21 @@
 
 ### Data preparation
 
-- train
+- train+val
 
-    训练数据（8210条），实为8153张图片，100类宠物狗
+    训练数据：8210条记录，实为8153张图片，100类宠物狗
 
-    链接：http://pan.baidu.com/s/1miv8NVi
+    验证数据：10551张图片
 
-    密码：ovmw
+    链接：http://pan.baidu.com/s/1slLOqBz
 
-    感谢大神提供下载好的数据集：
+    密码：5axb
 
-    链接：http://pan.baidu.com/s/1dEWLhFb
+- test-01
 
-    密码：nbzg
+    链接：http://pan.baidu.com/s/1gfaf9rt
+
+    密码：fl5n
 
 ### Train
 
