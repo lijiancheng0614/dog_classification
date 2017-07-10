@@ -46,7 +46,11 @@
 
 ### Train
 
-Run `train.sh`
+Run train script: `./train.sh $MODEL_NAME $GPU_ID`:
+
+```bash
+train.sh inception_v3 0
+```
 
 ### Test
 
