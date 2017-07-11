@@ -5,13 +5,10 @@ import os
 import numpy as np
 from PIL import Image
 
-test_list_path = sys.argv[1]
-model_name = sys.argv[2]
-model_iteration = sys.argv[3]
-gpu_id = int(sys.argv[4])
+prototxt = sys.argv[1]
+model = sys.argv[2]
+gpu_id = int(sys.argv[3])
 output_file_path = 'submission.txt'
-prototxt = 'prototxt/{}/test.prototxt'.format(model_name)
-model = 'model/{}/train_iter_{}.caffemodel'.format(model_name, model_iteration)
 
 caffe.set_device(gpu_id)
 caffe.set_mode_gpu()

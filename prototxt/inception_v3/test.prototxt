@@ -11,8 +11,8 @@ layer {
     mean_value: 123
   }
   image_data_param {
-    source: "data/list_val.txt"
-    root_folder: "data/val/"
+    source: "data/list_test-01.txt"
+    root_folder: "data/test-01/"
     batch_size: 1
     shuffle: false
     new_width: 330

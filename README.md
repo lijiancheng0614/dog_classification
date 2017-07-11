@@ -67,3 +67,11 @@ Run predict script: `python predict.py $TEST_IMAGE_DIR $MODEL_NAME $ITER $GPU_ID
 ```bash
 python predict.py data/test-01/ inception_v3 15000 0
 ```
+
+Or modify `protoxt/$MODEL_NAME/test.prototxt` and
+
+run test script: `python test.py $TEST_LIST_PATH $MODEL_NAME $ITER $GPU_ID`:
+
+```bash
+python test.py data/list_test-01.txt prototxt/inception_v3/test.prototxt 'model/inception_v3/train_iter_15000.caffemodel 0
+```
