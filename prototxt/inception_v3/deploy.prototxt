@@ -4676,10 +4676,10 @@ layer {
 }
 
 layer {
-  name: "classifier"
+  name: "classifier_dog"
   type: "InnerProduct"
   bottom: "pool_8x8_s1_drop"
-  top: "classifier"
+  top: "classifier_dog"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -4702,6 +4702,6 @@ layer {
 layer {
   name: "prob"
   type: "Softmax"
-  bottom: "classifier"
+  bottom: "classifier_dog"
   top: "prob"
 }

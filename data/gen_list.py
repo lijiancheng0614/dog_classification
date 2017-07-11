@@ -26,7 +26,7 @@ for idx in image_set.keys():
     label = image_set[idx]
     if label is None:
         continue
-    fd.write('{} {}\n'.format(idx, label))
+    fd.write('{}.jpg {}\n'.format(idx, label))
     if label not in label_id:
         label_id.add(label)
 
