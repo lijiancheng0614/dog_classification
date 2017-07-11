@@ -1,0 +1,19 @@
+net: "prototxt/inception_v3/trainval.prototxt"
+
+solver_type: SGD
+
+display: 20
+average_loss: 20
+
+base_lr: 0.0001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 18000
+max_iter: 1800000
+
+momentum: 0.9
+weight_decay: 0.0005
+
+snapshot: 6000
+snapshot_prefix: "model/inception_v3/trainval"
+solver_mode: GPU
