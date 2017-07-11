@@ -59,3 +59,11 @@ Run test script: `./test.sh $MODEL_NAME $ITER $GPU_ID`:
 ```bash
 ./test.sh inception_v3 2500 0
 ```
+
+### Submission
+
+Run predict script: `python predict.py $TEST_IMAGE_DIR $MODEL_NAME $ITER $GPU_ID`:
+
+```bash
+python predict.py data/test-01/ inception_v3 15000 0
+```
