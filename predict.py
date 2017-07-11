@@ -16,13 +16,17 @@ model = 'model/{}/train_iter_{}.caffemodel'.format(model_name, model_iteration)
 caffe.set_device(gpu_id)
 caffe.set_mode_gpu()
 
-def test(image_path, net):
-    transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})
-    transformer.set_transpose('data', (2,0,1))
-    transformer.set_mean('data', np.array([104, 117, 123]))
-    transformer.set_channel_swap('data', (2,1,0))
-    image = caffe.io.load_image(image_path)
-    net.blobs['data'].data[...] = transformer.preprocess('data', image)
+def test(image_path, net, new_height=330, new_width=330):
+    im = Image.open(image_path)
+    im = im.resize((new_width, new_height), Image.BILINEAR)
+    im = np.array(im, dtype=np.float32)
+    h, w = net.blobs['data'].data[0, 0].shape
+    dh, dw = (new_height - h) / 2, (new_width - w) / 2
+    im = im[dh : dh + h, dw : dw + w]
+    im = im[:,:,::-1]
+    im -= np.array((104, 117, 123))
+    im = im.transpose((2,0,1))
+    net.blobs['data'].data[...] = im
     _ = net.forward()
     out = net.blobs['prob'].data[0].argmax()
     return out
